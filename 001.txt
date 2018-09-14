@@ -1,0 +1,627 @@
+JAVA aula 01
+
+java linguagem para abrir executaveis
+javaweb java sendo sendo compilado para ser exibido em browser
+
+nota mental 001: todo nome de projeto começa com letra (maiuscula),
+todo nome de pacote  com letra (minuscula),
+todo nome de classe iniciara com letra (maiuscula).
+
+nota mental 002:  
+
+eclipse: diferença visualizaçao  (java)
+netbens: (javaweb)
+
+*o que?
+	
+*java?
+
+*main,onde?
+
+*public/void:
+
+- ???
+- ???
+
+file, new , java project
+
+instalar uma JRE
+src ou source : local codigo fonte
+
+bin : binario arquivo bytcols
+{
+	codigo fonte (Arq.java)
+
+	convertivo (Arq.class) => byte code 
+
+	executado JVM (Java Virtual Machine)
+
+	resultado (Console/ cmd)
+}
+
+API : Interface de Programação de Aplicativos
+ 
+void: metodos
+
+System.out.println(resultado);<=imprimir
+
+public void Substracao()<= metodo
+
+public double valorA;
+	public double valorB;
+	public double resultado;<= variaveis
+
+static metodo funçao
+
+Scanner digita = new Scanner(System.in);<=escanear entrada
+
+
+----------------------------------- como fazer-------------------------
+package exercicios;
+
+public class Exercicio02 {
+	public static double valorA;
+	public static double valorB;
+	public static double resultado;
+
+	public static void main(String[] args) {
+		System.out.println("Oi");
+		Soma();
+	}
+	public static void Soma() {
+		valorA = 10;
+		valorB = 15;
+		resultado = valorA + valorB;
+		System.out.println(resultado);
+	}
+	public static void Substracao() {
+		valorA = 15;
+		valorB = 10;
+		resultado = valorA - valorB;
+		System.out.println(resultado);
+	}
+	public static void Divisao() {
+		valorA = 10;
+		valorB = 5;
+		resultado = valorA / valorB;
+		System.out.println(resultado);
+	}
+	public static void Multiplicacao() {
+		valorA = 10;
+		valorB = 15;
+		resultado = valorA * valorB;
+		System.out.println(resultado);
+	}
+	
+}
+
+------------------------------------ou ------------------------------------
+package exercicios;
+
+public class Exercicio01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Comentario de uma linha
+		
+		/*Comentario*/
+		
+		// Declarar Variaveis
+		String nome;
+		int idade;
+		float dinheiro;
+		double notas;
+		boolean verdadeiro;
+		
+		//Valores das Variaveis
+		nome = "Astolfo";
+		idade = 45;
+		dinheiro = 99999;
+		notas = 9.60;
+		verdadeiro = false;
+		
+		//imprimir
+		System.out.println(nome);
+		System.out.println(idade);
+		System.out.println(dinheiro);
+		System.out.println(notas);
+		System.out.println(verdadeiro);
+		
+
+	}
+
+}
+
+
+--------------------print de login oula 05-------------------------------------
+
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exercicio05 {
+	
+	public static String usuario;
+	public static String senha;
+	
+
+	public static void main(String[] args) {
+		
+		/*
+		 criar um login, sem acesso a BD.
+		 
+		 A aplicação ira solicitar USUARIO e SENHA;
+		 
+		 Apos a digitaçao informar se
+		 
+		 "LOGADO" ou "USUARIO e/ou Senha invalidos";
+		 
+		 USUARIO : aluno
+		 SENHA: 1234
+		 
+		 */
+		Scanner digita = new Scanner(System.in);
+		
+		System.out.print(" informe USUARIO:");
+		usuario  = digita.next();
+		System.out.print(" informe SENHA:");
+		senha  = digita.next();
+		if (( usuario.trim().equals("aluno"))&&(senha.trim().equals("1234"))) {
+			System.out.println("LOGADO");}
+			else {
+				System.out.println("Usuario ou senha invalidos");
+			}
+			
+		
+	
+	}
+}
+--------------------------- aula 02-----------------------------------
+
+desafio procurar na internet o que sao 
+
+GETTERS E SETTErs
+
+*Get= recupera/ traz valor guardado anteriormente se nao tiver retorna null
+*set= guarda valor conforme tipo
+
+
+Sao metodos como (get ou set)
+
+--------------------------------instancia------------------------------
+	// instanciando MENU, para ser Usado todos os metodos e variaveis
+		Menu mn = new Menu();
+		mn.Exibe();
+
+------------------------------cursos-------------------------------------
+Udemy
+Alura
+loiane.tranning
+-------------------------------------------------------------------------
+
+programaçao orientado a objeto
+
+(mvc)( MODEL VIEW CONTROLLER)
+----------------------------------estrutura do principal ------------------
+package exercicio02;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Menu mn = new Menu();
+		mn.Exibe();
+
+	}
+
+}
+
+---------------------------- estrutura de repetiçao do menu-------------------
+package exercicio02;
+
+import javax.swing.JOptionPane;
+
+public class Menu {
+	
+	private int opcao = 3;
+	public String resposta;
+	public String nome;
+	public void Exibe() {
+		while(opcao!=0) {
+			opcao = Integer.parseInt(JOptionPane.showInputDialog("MENU \n 1-Cadastrar Nome \n 2-Listar Nomes\n 0-SAIR"));
+			switch(opcao) {
+			case 1 :
+				nome = JOptionPane.showInputDialog("MENU \n 1- informe Nome: ");
+			break;
+				
+			case 2 :
+				JOptionPane.showMessageDialog(null, "Nome Cadastro: "+nome);
+				break;
+			
+			default:
+				JOptionPane.showMessageDialog(null, "opcao escolhida invalida... ");
+				break;
+			
+			}
+		}
+	}
+	
+	public String Devolve() {
+		return resposta;
+	}
+}
+
+---------------------------------------aula 03 ----------------------------------
+GETTERS E SETTErs
+
+*Get= recupera/ traz valor guardado anteriormente se nao tiver retorna null
+*set= guarda valor conforme tipo
+
+
+Sao metodos como (get ou set)
+------------------------------- principal array --------------------------
+package controle;
+
+import visao.GeraArray;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GeraArray ga = new GeraArray();
+		ga.getClass();
+		ga.imprimeArray();
+
+	}
+
+}
+
+---------------------------------------gera array------------------------------------
+package visao;
+
+public class GeraArray {
+	
+	public String meuArray[] = new String[10];
+	
+	public GeraArray() {
+		
+		meuArray[0] = "Musquitu";
+		meuArray[1] = "Ze";
+		meuArray[2] = "BF";
+		meuArray[3] = "LP";
+		meuArray[4] = "Silvio";
+		meuArray[5] = "Benimaru";
+		meuArray[6] = "JV";
+		meuArray[7] = "Adilso";
+		meuArray[8] = "Juninho";
+		meuArray[9] = "Saulo";
+		
+	}
+	
+	public void imprimeArray() {
+		for(int i=0; i< meuArray.length;i++) {
+			System.out.println(meuArray[i]);
+		}
+	}
+
+}
+
+-------------------------------------avaliaçao------------------------------------
+package teste;
+
+import java.util.*;
+import javax.swing.*;
+
+public class Principal {
+	
+	static String Cxc[] = new String[20];
+	static int w = 1;
+	static int i = 0;
+	static int op = 0;
+	static int s = 0;
+	static int vez = 20;
+	
+	static Random r = new Random();
+	
+	public static void main(String[] args) {
+		
+		while(op!=4) {
+			String escolha =
+					JOptionPane.showInputDialog("ESCOLHA: \n"
+					+ "1 - Gerar Senha\n"
+					+ "2 - Chamar Senha Aleatoria\n"
+					+ "3 - Chamar Senha Sequencia\n"
+					+ "4 - sair");
+					
+					if(escolha.trim().equals("")) {
+						JOptionPane.showMessageDialog(null, "informou Vazio");
+					
+					}else {
+						op = Integer.parseInt(escolha);
+						if(op==1)
+							GeraSenha();
+						if(op==2)
+							ChamaSenha_45();
+						if(op==3)
+							ChamaSenhaR_5885558();
+					}
+					
+					
+		}
+	}
+	
+	public static void GeraSenha() {
+		if(i<vez) {
+			Cxc[i] = String.valueOf(w);
+			System.out.println("SENHA: " + Cxc[i]);
+			i++;
+			w++;
+		
+		}else {
+			System.out.println("Esgotou Limite de Senhas!!!");
+		}
+	}
+	
+	public static void ChamaSenha_45() {
+		int msg = r.nextInt(w);
+		while(msg!=0) {
+			System.out.println("Senha da vez Aleatoria:" + msg);
+		break;
+		}
+	}
+	
+	public static void ChamaSenhaR_5885558() {
+		if((s<w)&&(s<vez)) {
+		System.out.println("Senha da Vez Sequencia: " + Cxc[s]);
+		s++;
+		}
+		else {
+			System.out.println("Esgotou Limite de Senhas!!!");
+		}
+	}
+
+}
+
+--------------------------------------------------------------------
+controle visao modelo
+------------------------------------------------------------------------------------------------
+Aula 004
+
+principio de (oo) orientado a objeto :metodo construtor e usado para gerar:
+telas para intergir com o ususario, carregar dados do banco de dados
+antes de gerar as telas e carregar outras partes do programa que o usuario ainda nao visualizou.
+
+
+local estoraged
+
+orientaçao a objeto  e a possibilidade de manipular (funçoes, variaveis, operaçoes, atributos)
+sem a necessidade de nenhum intermediario
+(Get,Post,cookie,Session) de forma a so carregar os dados necessario na memoria e nao todo o projeto.
+
+------------------------------------------ Pesquisar ----------------------------------------------------------
+list <> array <> arrayList
+
+procurar:
+ JTable
+	. como exibir os dados
+	. como exibir os Dados inseridos
+	. como formatar.
+
+*ParseInt:converte de string para inteiro.
+*value OF:converte de interiro para string.
+
+------------------------------------------- sites de java ---------------------------------------------------------------------
+
+
+*DevMedia
+*JavaProgressivo
+*tutorialsPoint
+
+oracle docs.
+
+type script.
+
+-----------------------------------Exercicio---------------------------------------------------------------------------------
+package visao;
+
+import javax.swing.JOptionPane;
+
+public class Menu {
+	
+	int opcao = 4;
+	String rascunho = "";
+	String nome[] = new String[10];
+	double media[] = new double[10];
+	int i = 0;
+	
+	public void ChamaMenu() {
+		while(opcao>0) {
+			rascunho = JOptionPane.showInputDialog("MENU ESCOLAR"+
+													"\n1 - cadastro"+
+													"\n2 - Listagem"+
+													"\n3 - Apaga"+
+													"\n3 - Sair");
+			opcao = Integer.parseInt(rascunho);
+			if (rascunho.trim().equals("")) {
+				JOptionPane.showMessageDialog(null, "informe algum Valor!!!", "Aula04",0);
+				
+			}else {
+				opcao = Integer.parseInt(rascunho);
+				switch(opcao) {
+					case 0: System.exit(0); break;
+					case 1: Cadastrar(); break;
+					case 2: Listar(); break;
+					case 3: Apagar(); break;
+					default:
+					JOptionPane.showMessageDialog(null,"informe algum valor do menu!!!","Aula04",0); break;
+				
+			}
+		}
+	}
+}
+		
+		public void Cadastrar(){
+			
+			nome[i] = JOptionPane.showInputDialog("Informe nome:");
+			Double n1 = Double.parseDouble(JOptionPane.showInputDialog("Nota1:"));
+			Double n2 = Double.parseDouble(JOptionPane.showInputDialog("Nota2:"));
+			Double n3 = Double.parseDouble(JOptionPane.showInputDialog("Nota3:"));
+			media[i] = (n1+n2+n3)/3;
+			
+			JOptionPane.showMessageDialog(null,"nome"+"nome[i]"+"\nMedia" + media[i], "Resultado - Aula04", 1);
+			i++;
+		}
+		public void Listar() {
+			String rascunho = "";
+			for(int x=0; x<i; x++) {
+				if(nome[x].equals("")) {
+					
+				}else {
+					rascunho += nome[x] + " - " + media[x] + "\n";
+				}
+			}
+			JOptionPane.showMessageDialog(null, rascunho, "Listagem - aula04",1);
+		}
+		
+		public void Apagar() {
+			
+			String rascunho = " Escolha pelo ID \n";
+			for(int x=0; x<i; x++) {
+				if(nome[x].equals("")) {
+					
+				}else {
+					rascunho += "ID:" + x +"(" + nome[x] + " - " + media[x] +")"+ "\n";
+				}
+			}
+			 int id = Integer.parseInt(JOptionPane.showInputDialog( rascunho));
+			 nome[id] = "";
+			 media[id] = 0.01;
+			 Listar();
+		}
+		
+		
+		
+}
+----------------------------------------------- aula05 -----------------------------------------------
+*referente a criaçao de arquivos, leitura e reenscriçao de conteudo em arquivos.txt que ja possuam
+conteudo. 
+
+001
+-----------------------------
+
+package controle;
+
+import java.io.*;
+import java.util.*;
+
+public class Criar01 {
+
+	public static void main(String[] args) throws IOException  {
+		// TODO Auto-generated method stub
+			Scanner ler = new Scanner(System.in);
+			int i, n;
+			
+			System.out.printf("Informe o numero para a tabuada:\n");
+			n = ler.nextInt();
+			
+			FileWriter arq = new FileWriter("C:\\JAVA\\ARQUIVOS\\tabuada.txt");
+			PrintWriter gravarArq = new PrintWriter(arq);
+			
+			gravarArq.println("+--Resultado--+%n");
+			for (i=1; i<=10; i++) {
+				gravarArq.printf("| %2d X %d = |%n", i, n, (i*n));
+			}
+			gravarArq.printf("+--------------+%n");
+			
+			arq.close();
+			
+			System.out.printf("\n Tabuada do %d foi gravada com sucesso em \"C:\\JAVA\\ARQUIVOS\\tabuada.txt\".\n",n);
+			ler.close();
+	}
+
+}
+
+002
+-----------------------------------
+
+package controle;
+
+import java.io.*;
+
+public class Criar02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			//conteudo
+			String content = "dfghdfhdhfghyfgyhtfgytfyfggf";
+			
+			//Criar arquivo
+			File file = new File("C:\\JAVA\\ARQUIVOS\\teste.txt");
+			
+			//Se o arquivo nao existir, ele gera
+			if (!file.exists()) {
+				file.createNewFile();
+				
+			}
+			//Prepara para escrever no arquivo
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+			
+			//Escrever e fecha  arquivo
+			bw.write(content);
+			bw.close();
+			
+			//le o arquivo
+			FileReader ler = new FileReader("C:\\JAVA\\ARQUIVO\\teste.txt");
+			BufferedReader reader = new BufferedReader(ler);
+			String linha;
+			while( (linha = reader.readLine()) != null){
+				System.out.println(linha); 
+			}
+			// Imprime confirmaçao 
+			System.out.println("Feito =D");
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}
+
+
+TelaMenu tM = new TelaMenu();
+		cn.Conecta();
+		//executeQuery so serve para select e preciso um resultSet
+		//Para todos as outro use o update sem requerimento do resultSet
+		// Os outro inset into,delete,update
+		// O execute query retorna um array
+		// O execute update retorna inteiro 
+		TelaCaixa tc = new TelaCaixa();
+		try {
+		Statement st = cn.con.createStatement(); //paramento do banco
+		ResultSet rs = st.executeQuery("SELECT*FROM  usuario WHERE usu='"+ u +"' AND sen='"+ s +"';");
+		while(rs.next()) {
+			logado = true;
+			JOptionPane.showMessageDialog(null,"Usuario Logado!!!");
+			 user = rs.getString("usu");	 	
+			String admin = "admin";
+			if(user.trim().equals(admin))
+			{
+				tM.getClass();
+				tM.setVisible(true);
+				
+			}else
+			{
+				tc.getClass();
+				tc.setVisible(true);
+			}
+		}
+
+
+

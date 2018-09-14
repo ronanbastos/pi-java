@@ -1,0 +1,19 @@
+PROJETO FINAL JAVA.war															|
+																				|
+*Locadora de veiculos(carros)														|
+																				|
+*todos teram																		|
+	*login (usuario/senha).															|
+																				|
+	*Cadastro (somente para o administrador).											|
+																				|
+	*ATENÇÃO( *status do produto|													|
+		 | *disponibilidade |															|
+		 | *saldo no estoque|														|
+		 | *entrada e saida de quantidade).												|
+																				|
+	*disposição de entrada (gerente).													|
+																				|
+	*tela de funcionario.															|
+	*tela de gerente.																
+	*tela de administrador.

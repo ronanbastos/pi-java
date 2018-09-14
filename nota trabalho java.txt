@@ -1,0 +1,3 @@
+Tabela client e dos carros =somar tabela relatorio
+Gerente cadastra ou excluir cadastro de carros e usuario
+Atendente vai cadastra cliente e ver os carros disponivel
